@@ -142,10 +142,12 @@ aside {
     border: 1px solid var(--grey-0);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    
     min-height: 214px;
-    background-color: var(--grey-0)
+    max-height: 260px;
+    background-color: var(--grey-0);
+    overflow: scroll;
 }
 
 .shopping-cart-inside h4,
@@ -170,4 +172,37 @@ header a:hover {
 
 .esconder{
     display: none;
+}
+
+.card-carrinho{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 20px;
+}
+
+.card-carrinho figure{
+    margin: 0 20px 0 0;
+    width: 90px;
+    height: 90px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-carrinho img{
+    width: 100%;
+}
+
+.card-carrinho div{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-carrinho div a, .card-carrinho div h4, .card-carrinho div p{
+    margin: 0;
+    font-size: 14px;
 }
