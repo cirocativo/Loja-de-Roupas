@@ -1,4 +1,4 @@
-:root{
+:root {
     --grey-100: #333333;
     --grey-50: #828282;
     --grey-0: #F5F5F5;
@@ -7,60 +7,60 @@
     --color-secondary: #37268C;
 }
 
-body{
+body {
     color: var(--grey-100);
     font-family: 'Inter', sans-serif;
-    
+
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     padding: 0 125px;
     align-items: center;
-    box-shadow: 0 4px 30px -10px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 30px -10px rgba(0, 0, 0, 0.25);
     height: 65px;
 }
 
 
-header ul{
+header ul {
     display: flex;
     justify-content: space-around;
     width: 350px;
     list-style-type: none;
 }
 
-a{
+a {
     color: inherit;
     text-decoration: none;
 }
 
-.main-content{
+.main-content {
     display: flex;
     justify-content: space-between;
     gap: 80px;
     padding: 50px 115px;
 }
 
-.clothes-list{
-    display:flex;
+.clothes-list {
+    display: flex;
     justify-content: space-between;
     gap: 40px;
     flex-wrap: wrap;
     margin-top: 0;
 }
 
-.card{
+.card {
     display: flex;
     flex-direction: column;
     max-width: 296px;
     border: 1px solid var(--grey-0);
     border-radius: 1px;
-    
-    
+
+
 }
 
-.card figure{
+.card figure {
     width: 100%;
     align-self: center;
     background-color: var(--grey-0);
@@ -70,11 +70,11 @@ a{
     margin-top: 0;
 }
 
-.card figcaption{
+.card figcaption {
     display: none;
 }
 
-.card section{
+.card section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -82,25 +82,25 @@ a{
     padding: 0 10px 20px 10px;
 }
 
-.card .category{
+.card .category {
     background-color: var(--color-primary);
     color: white;
     padding: 5px 6px;
     box-shadow: 1px 1px 2px 2px var(--color-primary);
 }
 
-.font-small-size{
+.font-small-size {
     font-size: 14px;
 }
 
 
-aside{
+aside {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.search-box{
+.search-box {
     display: flex;
     justify-content: space-between;
     width: 347px;
@@ -108,27 +108,27 @@ aside{
     gap: 8px;
 }
 
-.search-box input{
+.search-box input {
     background-color: var(--grey-0);
     width: 246px;
-    
+
 }
 
-.search-box button{
+.search-box button {
     background-color: var(--color-secondary);
     color: white;
     width: 96px
 }
 
-.shopping-cart{
+.shopping-cart {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px; 
+    margin-top: 30px;
 }
 
-.shopping-cart h3{
+.shopping-cart h3 {
     background-color: var(--color-secondary);
     color: white;
     text-align: center;
@@ -137,7 +137,7 @@ aside{
     margin: 0 auto;
 }
 
-.shopping-cart-inside{
+.shopping-cart-inside {
     width: 100%;
     border: 1px solid var(--grey-0);
     display: flex;
@@ -148,6 +148,22 @@ aside{
     background-color: var(--grey-0)
 }
 
-.shopping-cart-inside h4, .shopping-cart-inside p{
+.shopping-cart-inside h4,
+.shopping-cart-inside p {
     margin: 10px 0;
+}
+
+
+header a:hover {
+    text-decoration: underline;
+    color: var(--color-primary);
+}
+
+.card:hover {
+    border: 1px solid var(--color-primary);
+}
+
+.card a:hover {
+    text-decoration: underline;
+    color: var(--color-primary);
 }
