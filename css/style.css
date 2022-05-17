@@ -92,3 +92,62 @@ a{
 .font-small-size{
     font-size: 14px;
 }
+
+
+aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-box{
+    display: flex;
+    justify-content: space-between;
+    width: 347px;
+    height: 50px;
+    gap: 8px;
+}
+
+.search-box input{
+    background-color: var(--grey-0);
+    width: 246px;
+    
+}
+
+.search-box button{
+    background-color: var(--color-secondary);
+    color: white;
+    width: 96px
+}
+
+.shopping-cart{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px; 
+}
+
+.shopping-cart h3{
+    background-color: var(--color-secondary);
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 15px 0;
+    margin: 0 auto;
+}
+
+.shopping-cart-inside{
+    width: 100%;
+    border: 1px solid var(--grey-0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 214px;
+    background-color: var(--grey-0)
+}
+
+.shopping-cart-inside h4, .shopping-cart-inside p{
+    margin: 10px 0;
+}
