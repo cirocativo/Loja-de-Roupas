@@ -35,6 +35,13 @@ a{
     text-decoration: none;
 }
 
+.main-content{
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 50px 115px;
+}
+
 .clothes-list{
     display:flex;
     justify-content: space-between;
