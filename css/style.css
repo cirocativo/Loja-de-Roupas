@@ -34,3 +34,54 @@ a{
     color: inherit;
     text-decoration: none;
 }
+
+.clothes-list{
+    display:flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 0;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    max-width: 296px;
+    border: 1px solid var(--grey-0);
+    border-radius: 1px;
+    
+    
+}
+
+.card figure{
+    width: 100%;
+    align-self: center;
+    background-color: var(--grey-0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.card figcaption{
+    display: none;
+}
+
+.card section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 296px;
+    padding: 0 10px 20px 10px;
+}
+
+.card .category{
+    background-color: var(--color-primary);
+    color: white;
+    padding: 5px 6px;
+    box-shadow: 1px 1px 2px 2px var(--color-primary);
+}
+
+.font-small-size{
+    font-size: 14px;
+}
