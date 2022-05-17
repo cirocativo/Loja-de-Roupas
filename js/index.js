@@ -90,7 +90,7 @@ function makeList(){
         
         card.className          = "card"
         addToCart.innerText     = 'Adicionar ao carrinho'
-        title.className         = 'category font-small-size'
+        category.className         = 'category font-small-size'
         description.className   = value.className = addToCart.className = 'font-small-size'
         addToCart.href          = '#'
 
