@@ -147,7 +147,8 @@ aside {
     min-height: 214px;
     max-height: 260px;
     background-color: var(--grey-0);
-    overflow: scroll;
+    overflow: auto;
+    
 }
 
 .shopping-cart-inside h4,
@@ -205,4 +206,20 @@ header a:hover {
 .card-carrinho div a, .card-carrinho div h4, .card-carrinho div p{
     margin: 0;
     font-size: 14px;
+}
+
+.sum-box{
+    width: 100%;
+    height: 126px;
+    background-color: var(--grey-100);
+    color: white;
+}
+
+.sum-box ul{
+    padding: 0 40px;
+}
+
+.sum-box ul li{
+    display: flex;
+    justify-content: space-between;
 }
