@@ -1,3 +1,4 @@
+const carrinho = []
 const data = [
     {
       id: 1,
@@ -93,6 +94,9 @@ function makeList(){
         category.className         = 'category font-small-size'
         description.className   = value.className = addToCart.className = 'font-small-size'
         addToCart.href          = '#'
+        addToCart.classList.add('link-cart')
+
+        card.addEventListener('click', addToCartFunction)
 
         figure.appendChild(image)
         figure.appendChild(figcaption)
@@ -108,6 +112,31 @@ function makeList(){
         ul.appendChild(card)
         
         clothesList.push(card)
+    }
+}
+
+function addToCartFunction(event){
+    if(event.target.classList.contains('link-cart')){
+        //console.log('vitoria')
+        let elem = data.filter((d) => d.id == Number(event.currentTarget.id))
+
+        carrinho.push(elem)
+
+        refreshCart()
+
+    }
+    
+}
+
+function refreshCart(){
+    if(carrinho.length){
+        document.getElementById('aviso1').classList.add('esconder')
+        document.getElementById('aviso2').classList.add('esconder')
+        
+
+    }else{
+        document.getElementById('aviso1').classList.remove('esconder')
+        document.getElementById('aviso2').classList.remove('esconder')
     }
 }
 

@@ -167,3 +167,7 @@ header a:hover {
     text-decoration: underline;
     color: var(--color-primary);
 }
+
+.esconder{
+    display: none;
+}
