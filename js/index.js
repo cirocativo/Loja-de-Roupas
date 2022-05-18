@@ -193,6 +193,8 @@ function refreshCart(){
     }else{
         boxAviso.classList.remove('esconder')
         sumBox.classList.add('esconder')
+
+        shoppingCartDiv.appendChild(boxAviso)
     }
 }
 
