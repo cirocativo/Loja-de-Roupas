@@ -1,4 +1,5 @@
 let carrinho = []
+
 const data = [
     {
       id: 1,
@@ -60,13 +61,16 @@ const data = [
       addCart: "Adicionar ao carrinho",
       tag: ["Camisetas"],
     },
-  ];
-  
+]
+
+let filteredData = data
+
 const clothesList = []
 
-function makeList(){
+function refreshProductsList(){
     const ul = document.querySelector('.clothes-list')
-    for(let i = 0; i < data.length; i++){
+    ul.innerHTML = ''
+    for(let i = 0; i < filteredData.length; i++){
 
         const card          = document.createElement('li')
         const figure        = document.createElement('figure')
@@ -80,14 +84,14 @@ function makeList(){
         const addToCart     = document.createElement('a')
 
 
-        card.id                 = data[i].id
-        image.src               = data[i].img
-        image.alt               = data[i].nameItem
-        figcaption.innerText    = data[i].nameItem
-        category.innerText      = data[i].tag[0]
-        title.innerText         = data[i].nameItem
-        description.innerText   = data[i].description
-        value.innerText         = "R$ " + data[i].value.toFixed(2)
+        card.id                 = filteredData[i].id
+        image.src               = filteredData[i].img
+        image.alt               = filteredData[i].nameItem
+        figcaption.innerText    = filteredData[i].nameItem
+        category.innerText      = filteredData[i].tag[0]
+        title.innerText         = filteredData[i].nameItem
+        description.innerText   = filteredData[i].description
+        value.innerText         = "R$ " + filteredData[i].value.toFixed(2)
         
         card.className          = "card"
         addToCart.innerText     = 'Adicionar ao carrinho'
@@ -119,7 +123,7 @@ function addToCartFunction(event){
     event.preventDefault()
     if(event.target.classList.contains('link-cart')){
         
-        let elem = data.filter((d) => d.id == Number(event.currentTarget.id))[0]
+        let elem = filteredData.filter((d) => d.id == Number(event.currentTarget.id))[0]
 
         carrinho.push(elem)
         
@@ -199,4 +203,40 @@ function refreshCart(){
     }
 }
 
-makeList()
+const menu = document.querySelector('.menu')
+const menuList = []
+const categoryClasses = ['all', 'accessories', 'shoes', 'shirts']
+const categoryClassesPT = ['Todos', 'Acessórios', 'Calçados', 'Camisetas']
+
+function createMenuList(){
+  for(let i = 0; i < categoryClasses.length; i++){
+    menuList.push(document.getElementById(categoryClasses[i]))
+  }
+}
+
+function menuHandler(){
+
+  menu.addEventListener('click', (e) =>{
+    e.preventDefault()
+
+    let chosen = categoryClasses.indexOf(e.target.id)
+    if(chosen == -1) return
+
+    menuList.map(function (x, index){
+      index == chosen ? x.classList.add('filter-selected') : x.classList.remove('filter-selected')
+    })
+
+    if(categoryClasses[chosen] == 'all')
+      filteredData = data
+    else
+      filteredData = data.filter(function (x, index){return categoryClassesPT[chosen] == x.tag[0]})
+
+      refreshProductsList()
+  })
+}
+
+refreshProductsList()
+
+createMenuList()
+
+menuHandler()

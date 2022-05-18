@@ -35,6 +35,10 @@ a {
     text-decoration: none;
 }
 
+.filter-selected{
+    font-weight: bold;
+}
+
 .main-content {
     display: flex;
     justify-content: space-between;
