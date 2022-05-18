@@ -1,4 +1,4 @@
-const carrinho = []
+let carrinho = []
 const data = [
     {
       id: 1,
@@ -132,13 +132,14 @@ const boxAviso = document.getElementById('box-aviso')
 const  sumBox = document.getElementById('sum-box')
 
 function refreshCart(){
+    
+    const shoppingCartDiv = document.querySelector('.shopping-cart-inside')
+    shoppingCartDiv.innerHTML = ""
+
     if(carrinho.length){
         
         boxAviso.classList.add('esconder')
         sumBox.classList.remove('esconder')
-
-        const shoppingCartDiv = document.querySelector('.shopping-cart-inside')
-        shoppingCartDiv.innerHTML = ""
 
         let sum = 0, n = 0
 
@@ -154,7 +155,9 @@ function refreshCart(){
             section.className = 'card-carrinho'
             a.href = '#'
             a.innerText = 'Remover produto'
+            a.id = 'remove'
 
+            section.id   = 'c' + carrinho[i].id
             img.src      = carrinho[i].img
             img.alt      = carrinho[i].nameItem
             h4.innerText = carrinho[i].nameItem
@@ -173,6 +176,14 @@ function refreshCart(){
 
             sum += carrinho[i].value
             n++
+
+            section.addEventListener('click', (e) => {
+                console.log(e.target)
+                if(e.target.id == 'remove'){
+                    carrinho = carrinho.filter((x) => x.id != Number(e.currentTarget.id[1]))
+                    refreshCart()
+                }
+            })
         }
 
         document.getElementById('quantidade-total').innerText = n

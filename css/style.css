@@ -165,18 +165,13 @@ aside {
 }
 
 
-header a:hover {
+a:hover {
     text-decoration: underline;
     color: var(--color-primary);
 }
 
 .card:hover {
     border: 1px solid var(--color-primary);
-}
-
-.card a:hover {
-    text-decoration: underline;
-    color: var(--color-primary);
 }
 
 .esconder {
@@ -188,6 +183,7 @@ header a:hover {
     justify-content: flex-start;
     align-items: center;
     margin: 10px 20px;
+    border: 1px solid var(--grey-0)
 }
 
 .card-carrinho figure {
@@ -233,3 +229,8 @@ header a:hover {
     display: flex;
     justify-content: space-between;
 }
+
+.card-carrinho:hover{
+    border: 1px solid var(--grey-100);
+}
+
