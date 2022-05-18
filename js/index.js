@@ -117,26 +117,70 @@ function makeList(){
 
 function addToCartFunction(event){
     if(event.target.classList.contains('link-cart')){
-        //console.log('vitoria')
-        let elem = data.filter((d) => d.id == Number(event.currentTarget.id))
+        
+        let elem = data.filter((d) => d.id == Number(event.currentTarget.id))[0]
 
         carrinho.push(elem)
-
+        
         refreshCart()
 
     }
     
 }
 
+const boxAviso = document.getElementById('box-aviso')
+const  sumBox = document.getElementById('sum-box')
+
 function refreshCart(){
     if(carrinho.length){
-        document.getElementById('aviso1').classList.add('esconder')
-        document.getElementById('aviso2').classList.add('esconder')
         
+        boxAviso.classList.add('esconder')
+        sumBox.classList.remove('esconder')
+
+        const shoppingCartDiv = document.querySelector('.shopping-cart-inside')
+        shoppingCartDiv.innerHTML = ""
+
+        let sum = 0, n = 0
+
+        for(let i = 0; i < carrinho.length; i++){
+            const section   = document.createElement('section')
+            const figure    = document.createElement('figure')
+            const img       = document.createElement('img')
+            const div       = document.createElement('div')
+            const h4        = document.createElement('h4')
+            const p         = document.createElement('p')
+            const a         = document.createElement('a')
+
+            section.className = 'card-carrinho'
+            a.href = '#'
+            a.innerText = 'Remover produto'
+
+            img.src      = carrinho[i].img
+            img.alt      = carrinho[i].nameItem
+            h4.innerText = carrinho[i].nameItem
+            p.innerText  = "R$ " + carrinho[i].value.toFixed(2)
+
+            figure.appendChild(img)
+            
+            div.appendChild(h4)
+            div.appendChild(p)
+            div.appendChild(a)
+
+            section.appendChild(figure)
+            section.appendChild(div)
+
+            shoppingCartDiv.appendChild(section)
+
+            sum += carrinho[i].value
+            n++
+        }
+
+        document.getElementById('quantidade-total').innerText = n
+        document.getElementById('valor-total').innerText = "R$ " + sum.toFixed(2)
 
     }else{
-        document.getElementById('aviso1').classList.remove('esconder')
-        document.getElementById('aviso2').classList.remove('esconder')
+        boxAviso.classList.remove('esconder')
+        sumBox.classList.add('esconder')
     }
 }
 
