@@ -116,6 +116,7 @@ function makeList(){
 }
 
 function addToCartFunction(event){
+    event.preventDefault()
     if(event.target.classList.contains('link-cart')){
         
         let elem = data.filter((d) => d.id == Number(event.currentTarget.id))[0]
@@ -178,7 +179,7 @@ function refreshCart(){
             n++
 
             section.addEventListener('click', (e) => {
-                console.log(e.target)
+                e.preventDefault()
                 if(e.target.id == 'remove'){
                     carrinho = carrinho.filter((x) => x.id != Number(e.currentTarget.id[1]))
                     refreshCart()
