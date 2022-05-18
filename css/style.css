@@ -72,6 +72,10 @@ a {
     margin-top: 0;
 }
 
+.card figure img {
+    width: 80%;
+}
+
 .card figcaption {
     display: none;
 }

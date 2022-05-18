@@ -61,6 +61,16 @@ const data = [
       addCart: "Adicionar ao carrinho",
       tag: ["Camisetas"],
     },
+    {
+      id: 7,
+      img: "./img/sandalia.png",
+      nameItem: "Nike Men's Sandal Canyon",
+      description:
+        "O design inspirado na herança da Nike conta com uma sola espessa, entressola de espuma...",
+      value: 300,
+      addCart: "Adicionar ao carrinho",
+      tag: ["Calçados"],
+    },
 ]
 
 let filteredData = data
