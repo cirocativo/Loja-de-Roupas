@@ -158,7 +158,7 @@ function refreshCart(){
             a.innerText = 'Remover produto'
             a.id = 'remove'
 
-            section.id   = 'c' + carrinho[i].id
+            section.id   = 'c' + i
             img.src      = carrinho[i].img
             img.alt      = carrinho[i].nameItem
             h4.innerText = carrinho[i].nameItem
@@ -181,7 +181,8 @@ function refreshCart(){
             section.addEventListener('click', (e) => {
                 e.preventDefault()
                 if(e.target.id == 'remove'){
-                    carrinho = carrinho.filter((x) => x.id != Number(e.currentTarget.id[1]))
+                    //carrinho = carrinho.filter((x) => x.id != Number(e.currentTarget.id[1]))
+                    carrinho.splice(Number(e.currentTarget.id[1]), 1)
                     refreshCart()
                 }
             })
