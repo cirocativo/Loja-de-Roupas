@@ -75,8 +75,6 @@ const data = [
 
 let filteredData = data
 
-const clothesList = []
-
 function refreshProductsList(){
     const ul = document.querySelector('.clothes-list')
     ul.innerHTML = ''
@@ -124,8 +122,6 @@ function refreshProductsList(){
         card.appendChild(section)
 
         ul.appendChild(card)
-        
-        clothesList.push(card)
     }
 }
 
