@@ -239,11 +239,25 @@ function menuHandler(){
     if(categoryClasses[chosen] == 'all')
       filteredData = data
     else
-      filteredData = data.filter(function (x, index){return categoryClassesPT[chosen] == x.tag[0]})
+      filteredData = data.filter(function (x){return categoryClassesPT[chosen] == x.tag[0]})
 
       refreshProductsList()
   })
 }
+
+const searchButton = document.querySelector('button')
+const input = document.querySelector('input')
+
+searchButton.addEventListener('click', function () {
+  let text = input.value.toLowerCase()
+  console.log(text)
+
+  filteredData = data.filter(function (x) {return x.nameItem.toLowerCase().includes(text)})
+
+  console.log(filteredData)
+
+  refreshProductsList()
+})
 
 refreshProductsList()
 
